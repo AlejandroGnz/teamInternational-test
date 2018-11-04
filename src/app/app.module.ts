@@ -6,10 +6,12 @@ import { MaterialModule } from './custom-modules/material.module';
 
 import { AppComponent } from './app.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
+import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesTableComponent
+    EmployeesTableComponent,
+    SearchEmployeeComponent
   ],
   imports: [
     BrowserModule,
