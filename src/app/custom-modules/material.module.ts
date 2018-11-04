@@ -6,6 +6,7 @@ import {
   MatSelectModule,
   MatSlideToggleModule,
   MatIconModule,
+  MatTooltipModule,
   MatTableModule,
 } from '@angular/material';
 
@@ -17,6 +18,7 @@ import {
     MatSelectModule,
     MatSlideToggleModule,
     MatIconModule,
+    MatTooltipModule,
     MatTableModule
   ],
   exports: [
@@ -25,6 +27,7 @@ import {
     MatSelectModule,
     MatSlideToggleModule,
     MatIconModule,
+    MatTooltipModule,
     MatTableModule
   ]
 })

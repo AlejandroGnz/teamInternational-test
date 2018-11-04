@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MaterialModule } from './custom-modules/material.module';
+
 import { AppComponent } from './app.component';
-import { MaterialModule } from './material.module';
+import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeesTableComponent
   ],
   imports: [
     BrowserModule,
