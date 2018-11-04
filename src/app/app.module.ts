@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { MaterialModule } from './custom-modules/material.module';
@@ -12,6 +13,7 @@ import { EmployeesTableComponent } from './components/employees-table/employees-
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MaterialModule
   ],
   providers: [],
