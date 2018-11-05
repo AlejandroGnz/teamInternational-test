@@ -25,9 +25,21 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let employee">
-      <mat-icon matTooltip="create">create</mat-icon>
-      <mat-icon matTooltip="view">visibility</mat-icon>
-      <mat-icon matTooltip="delete">delete_forever</mat-icon>
+      <a routerLink="/employees/{{employee.uid}}">
+        <mat-icon matTooltip="create">
+          create
+        </mat-icon>
+      </a>
+      <a routerLink="/employees/{{employee.uid}}" [queryParams]="{ viewmode: true }">
+        <mat-icon matTooltip="view">
+          visibility
+        </mat-icon>
+      </a>
+      <a (click)="deleteEmployee(employee)">
+        <mat-icon matTooltip="delete">
+          delete_forever
+        </mat-icon>
+      </a>
     </td>
   </ng-container>
 

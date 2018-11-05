@@ -17,5 +17,8 @@ export class EmployeesTableComponent implements OnInit {
 
   ngOnInit() {
   }
+  deleteEmployee(employee):void {
+    console.log(employee);
+  }
 
 }
