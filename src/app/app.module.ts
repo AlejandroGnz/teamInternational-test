@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -12,17 +13,20 @@ import { EmployeeDetails } from './containers/employee-details';
 import { AppComponent } from './app.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
+import { EmployeeFormComponent } from './components/employee-info/employee-info.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeList,
     EmployeeDetails,
     EmployeesTableComponent,
-    SearchEmployeeComponent
+    SearchEmployeeComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       applicationRoutes,
       { enableTracing: true }

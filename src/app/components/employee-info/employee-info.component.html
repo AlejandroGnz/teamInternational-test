@@ -1,0 +1,29 @@
+<form class="employee-form">
+  <mat-form-field>
+    <input type="text" matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="dobPicker" (focus)="dobPicker.open()" placeholder="Day of birth">
+    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+    <mat-datepicker #dobPicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" placeholder="Country" matInput [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let country of countries" [value]="country.alpha2Code">
+        {{country.nativeName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="hireDatePicker" (focus)="hireDatePicker.open()" placeholder="Hire date">
+    <mat-datepicker-toggle matSuffix [for]="hireDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #hireDatePicker></mat-datepicker>
+  </mat-form-field>
+  <mat-slide-toggle labelPosition="before" color="primary">
+    Active
+  </mat-slide-toggle>
+</form>
