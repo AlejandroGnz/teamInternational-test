@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './custom-modules/material.module';
 import { applicationRoutes } from './routes';
 
-import { EmployeesContainer } from './containers/employees.component';
+import { EmployeeList } from './containers/employee-list';
+import { EmployeeDetails } from './containers/employee-details';
 
 import { AppComponent } from './app.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
@@ -14,7 +15,8 @@ import { SearchEmployeeComponent } from './components/search-employee/search-emp
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesContainer,
+    EmployeeList,
+    EmployeeDetails,
     EmployeesTableComponent,
     SearchEmployeeComponent
   ],
