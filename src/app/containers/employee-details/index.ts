@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router"
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { Employee, ADD_EMPLOYEE } from '../../reducers/employees.reducers';
+
+interface AppState {
+  employees: Employee[];
+}
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
@@ -29,6 +38,10 @@ export class EmployeeDetails {
       Validators.required
     ]),
   })
+  constructor(
+    private store: Store<AppState>,
+    private router: Router
+  ) {}
   validateAge(control: FormControl) {
     const dateYear: number = new Date(control.value).getFullYear();
     const currentYear: number = new Date().getFullYear()
@@ -38,6 +51,16 @@ export class EmployeeDetails {
     return null
   }
   handleSubmit(event) {
-    console.log(this.employeeForm.value);
+    const employee: Employee = {
+      uid: new Date().getTime().toString(),
+      ...this.employeeForm.value
+    }
+    this.store.dispatch({
+      type: ADD_EMPLOYEE,
+      payload: {
+        employee,
+      }
+    })
+    this.router.navigate(['/employees'])
   }
 }

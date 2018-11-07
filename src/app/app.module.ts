@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { StoreModule } from '@ngrx/store';
+import { employeesReducer } from './reducers/employees.reducers'
+
 import { MaterialModule } from './custom-modules/material.module';
 import { applicationRoutes } from './routes';
 
@@ -36,6 +39,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
       applicationRoutes,
       // { enableTracing: true }
     ),
+    StoreModule.forRoot({ employees: employeesReducer }),
     MaterialModule
   ],
   providers: [],
