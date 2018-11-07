@@ -1,8 +1,14 @@
-<div class="employee-form-container">
+<form [formGroup]="employeeForm" (ngSubmit)="handleSubmit($event)" class="employee-form-container">
   <div class="form-row">
-    <app-employee-info></app-employee-info>
-    <app-job-details></app-job-details>
+    <app-employee-info [parentForm]="employeeForm"></app-employee-info>
+    <app-job-details [parentForm]="employeeForm"></app-job-details>
   </div>
   <button mat-raised-button>back</button>
-  <button mat-raised-button color="primary">save</button>
-</div>
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [disabled]="!employeeForm.valid">
+    save
+  </button>
+</form>

@@ -1,3 +1,17 @@
+.employee-form-container {
+  text-align: center;
+}
+.employee-form-container button {
+  width: 150px;
+  margin: 25px 15px;
+}
 .employee-form-container .form-row {
   display: flex;
+  justify-content: center;
+}
+.employee-form-container .form-row app-employee-info {
+  margin-right: 25px;
+}
+.employee-form-container .form-row app-job-details {
+  margin-left: 25px;
 }

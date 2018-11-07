@@ -1,17 +1,22 @@
-<form class="job-form">
-  <mat-radio-group class="radio-button-input" (change)="onAreaChange($event)">
-    <mat-radio-button value="services">Services</mat-radio-button>
-    <mat-radio-button value="kitchen">Kitchen</mat-radio-button>
+<form [formGroup]="parentForm" class="job-form">
+  <mat-radio-group formControlName="jobArea" class="radio-button-input" (change)="onAreaChange($event)">
+    <mat-radio-button color="primary" value="services">Services</mat-radio-button>
+    <mat-radio-button color="primary" value="kitchen">Kitchen</mat-radio-button>
   </mat-radio-group>
   <mat-form-field>
-    <mat-select placeholder="job title">
+    <mat-select formControlName="jobTitle" placeholder="job title">
       <mat-option *ngFor="let job of jobs" [value]="job.value">
         {{ job.label }}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <input type="text" matInput placeholder="Tip Rate">
+    <input
+      formControlName="dateOfBirth"
+      type="text"
+      matInput
+      placeholder="Tip Rate"
+    >
     <mat-icon matPrefix [inline]="true">attach_money</mat-icon>
   </mat-form-field>
 </form>

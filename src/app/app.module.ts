@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './custom-modules/material.module';
 import { applicationRoutes } from './routes';
@@ -29,9 +30,11 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       applicationRoutes,
-      { enableTracing: true }
+      // { enableTracing: true }
     ),
     MaterialModule
   ],

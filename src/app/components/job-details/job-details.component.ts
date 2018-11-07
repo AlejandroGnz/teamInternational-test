@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSelectChange } from '@angular/material';
-
+import { FormGroup } from '@angular/forms';
 export interface Job{
   label: string
   value: string
@@ -11,7 +11,9 @@ export interface Job{
   styleUrls: ['./job-details.component.css']
 })
 export class JobDetailsComponent implements OnInit {
-  jobs: Array<Job> = []
+  @Input() parentForm: FormGroup;
+
+  jobs: Array<Job> = [];
   readonly serviceJobs: Array<Job> = [
     { label: 'Manager', value: 'manager' },
     { label: 'Host', value: 'host' },
@@ -28,13 +30,18 @@ export class JobDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.selectJobs(this.parentForm.value.jobArea);
   }
-  onAreaChange(event: MatSelectChange) {
-    if (event.value === 'kitchen') {
+  selectJobs(jobArea) {
+    if (jobArea === 'kitchen') {
       this.jobs = this.kitchenJobs;
     } else {
       this.jobs = this.serviceJobs;
     }
+    this.parentForm.controls.jobTitle.setValue(this.jobs[0].value)
+  }
+  onAreaChange(event: MatSelectChange) {
+    this.selectJobs(event.value);
   }
 
 }

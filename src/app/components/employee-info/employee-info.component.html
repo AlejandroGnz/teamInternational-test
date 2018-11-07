@@ -1,29 +1,62 @@
-<form class="employee-form">
+<form [formGroup]="parentForm" class="employee-form">
   <mat-form-field>
-    <input type="text" matInput placeholder="Name">
+    <input
+      matInput
+      formControlName="name"
+      placeholder="Name"
+    >
   </mat-form-field>
   <mat-form-field>
-    <input matInput [matDatepicker]="dobPicker" (focus)="dobPicker.open()" placeholder="Day of birth">
+    <input
+      matInput
+      [max]="maxDate"
+      formControlName="dateOfBirth"
+      [matDatepicker]="dobPicker"
+      (focus)="dobPicker.open()"
+      placeholder="Day of birth"
+    >
     <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
     <mat-datepicker #dobPicker></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
-    <input type="text" placeholder="Country" matInput [matAutocomplete]="auto">
+    <input
+      formControlName="country"
+      type="text"
+      placeholder="Country"
+      matInput
+      [matAutocomplete]="auto"
+    >
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let country of countries" [value]="country.alpha2Code">
-        {{country.nativeName}}
+      <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
+        {{country.name}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
   <mat-form-field>
-    <input type="text" matInput placeholder="Username">
+    <input
+      formControlName="username"
+      type="text"
+      matInput
+      placeholder="Username"
+    >
   </mat-form-field>
   <mat-form-field>
-    <input matInput [matDatepicker]="hireDatePicker" (focus)="hireDatePicker.open()" placeholder="Hire date">
+    <input
+      matInput
+      formControlName="hireDate"
+      [max]="maxDate"
+      [matDatepicker]="hireDatePicker"
+      (focus)="hireDatePicker.open()"
+      placeholder="Hire date"
+    >
     <mat-datepicker-toggle matSuffix [for]="hireDatePicker"></mat-datepicker-toggle>
     <mat-datepicker #hireDatePicker></mat-datepicker>
   </mat-form-field>
-  <mat-slide-toggle labelPosition="before" color="primary">
+  <mat-slide-toggle
+    formControlName="active"
+    labelPosition="before"
+    color="primary"
+  >
     Active
   </mat-slide-toggle>
 </form>
