@@ -51,10 +51,10 @@ export class JobDetailsComponent implements OnInit {
     } else {
       this.jobs = this.serviceJobs;
     }
-    this.parentForm.controls.jobTitle.setValue(this.jobs[0].value)
   }
   onAreaChange(event: MatSelectChange) {
     this.selectJobs(event.value);
+    this.parentForm.controls.jobTitle.setValue(this.jobs[0].value)
   }
 
 }

@@ -10,13 +10,24 @@ export interface Employee {
   country: string
   username: string
   hireDate: Date 
-  active: string
+  active: boolean
   jobArea: string
   jobTitle: string
   tipRate?: number
 }
-
-export function employeesReducer(state: Employee[] = [], action) {
+const employee = {
+  active: true,
+  age: 23,
+  country: "Colombia",
+  dateOfBirth: new Date(1995, 6, 22),
+  hireDate: new Date(2017, 6, 22),
+  jobArea: "services",
+  jobTitle: "manager",
+  name: "alejandro",
+  uid: "1541603486298",
+  username: "nando"
+}
+export function employeesReducer(state: Employee[] = [employee], action) {
   const { type, payload } = action;
   if (type === ADD_EMPLOYEE) {
     return [

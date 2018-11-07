@@ -5,6 +5,7 @@
   </div>
   <button routerLink="/employees" mat-raised-button>back</button>
   <button
+    *ngIf="showSaveButton"
     type="submit"
     mat-raised-button
     color="primary"
