@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Employee } from '../../reducers/employees.reducers';
+import { Employee, DELETE_EMPLOYEE } from '../../reducers/employees.reducers';
 
 interface AppState {
   employees: Employee[];
@@ -21,8 +21,13 @@ export class EmployeesTableComponent implements OnInit {
 
   ngOnInit() {
   }
-  deleteEmployee(employee):void {
-    console.log(employee);
+  deleteEmployee(employee) {
+    this.store.dispatch({
+      type: DELETE_EMPLOYEE,
+      payload: {
+        uid: employee.uid,
+      }
+    })
   }
 
 }

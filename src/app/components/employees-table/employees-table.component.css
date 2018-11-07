@@ -1,3 +1,36 @@
 table {
   width: 100%;
 }
+mat-icon {
+  margin: 0 10px;
+}
+mat-icon.create {
+  color: black;
+
+}
+mat-icon.view {
+  color: black;
+}
+mat-icon.delete {
+  color: red;
+}
+.mat-column-name {
+  flex: 0 0 23.3333% !important;
+  min-width: 104px !important;
+}
+.mat-column-age {
+  flex: 0 0 23.3333% !important;
+  min-width: 104px !important;
+}
+.mat-column-username {
+  flex: 0 0 23.3333% !important;
+  min-width: 104px !important;
+}
+.mat-column-hireDate {
+  flex: 0 0 23.3333% !important;
+  min-width: 104px !important;
+}
+.mat-column-actions {
+  flex: 0 0 10% !important;
+  min-width: 104px !important;
+}
