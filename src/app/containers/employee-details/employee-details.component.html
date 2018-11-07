@@ -1,15 +1,20 @@
 <form [formGroup]="employeeForm" (ngSubmit)="handleSubmit($event)" class="employee-form-container">
+    <h1 *ngIf="isEditing && !viewmode">Editing {{ employeeForm.controls.name.value }}</h1>
+    <h1 *ngIf="viewmode">Viewing {{ employeeForm.controls.name.value }}</h1>
   <div class="form-row">
-    <app-employee-info [parentForm]="employeeForm"></app-employee-info>
+    <app-employee-info [isEditing]="isEditing" [isEditing]="isEditing" [parentForm]="employeeForm"></app-employee-info>
     <app-job-details [parentForm]="employeeForm"></app-job-details>
   </div>
-  <button routerLink="/employees" mat-raised-button>back</button>
+  <button routerLink="/employees" mat-raised-button>
+    <mat-icon matPrefix>keyboard_arrow_left</mat-icon>
+    back
+  </button>
   <button
-    *ngIf="showSaveButton"
+    *ngIf="!viewmode"
     type="submit"
     mat-raised-button
     color="primary"
     [disabled]="!employeeForm.valid">
-    save
+    {{ isEditing ? 'update' : 'save' }}
   </button>
 </form>

@@ -1,6 +1,10 @@
 .employee-form-container {
   text-align: center;
 }
+h1 {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  color: #333333;
+}
 .employee-form-container button {
   width: 150px;
   margin: 25px 15px;

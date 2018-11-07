@@ -38,7 +38,7 @@ export class EmployeeDetails implements OnInit {
       Validators.required
     ]),
   })
-  showSaveButton: boolean = true;
+  viewmode: boolean = false;
   isEditing: boolean = false;
   currentid: string = '';
   constructor(
@@ -64,7 +64,7 @@ export class EmployeeDetails implements OnInit {
     })
     this.activatedRoute.queryParams.subscribe((params) => {
       if (params.viewmode === 'true') {
-        this.showSaveButton = false;
+        this.viewmode = true;
         Object.keys(this.employeeForm.controls).forEach(controlName => {
           this.employeeForm.controls[controlName].disable();
         })

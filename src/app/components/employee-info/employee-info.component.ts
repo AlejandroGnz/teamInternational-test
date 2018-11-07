@@ -15,6 +15,8 @@ export interface Country {
 })
 export class EmployeeFormComponent implements OnInit {
   @Input() parentForm: FormGroup;
+  @Input() isEditing: boolean;
+  @Input() viewmode: boolean;
   maxDate = new Date().toISOString();
   countries: Country[] = []
   filteredCountries: Observable<Country[]>;
