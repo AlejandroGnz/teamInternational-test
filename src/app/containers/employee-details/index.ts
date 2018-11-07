@@ -28,7 +28,6 @@ export class EmployeeDetails {
     jobTitle: new FormControl(null, [
       Validators.required
     ]),
-    tipRate: new FormControl(null, )
   })
   validateAge(control: FormControl) {
     const dateYear: number = new Date(control.value).getFullYear();

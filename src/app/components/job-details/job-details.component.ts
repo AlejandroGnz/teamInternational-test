@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSelectChange } from '@angular/material';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 export interface Job{
   label: string
   value: string
@@ -12,7 +13,7 @@ export interface Job{
 })
 export class JobDetailsComponent implements OnInit {
   @Input() parentForm: FormGroup;
-
+  showTipInput: boolean = false;
   jobs: Array<Job> = [];
   readonly serviceJobs: Array<Job> = [
     { label: 'Manager', value: 'manager' },
@@ -30,6 +31,18 @@ export class JobDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.parentForm.controls.jobTitle.valueChanges
+      .subscribe(value => {
+        if (value === 'waitress' || value === 'Dining room manager') {
+          this.showTipInput = true;
+          this.parentForm.addControl('tipRate', new FormControl('', [
+            Validators.required
+          ]))
+        } else {
+          this.showTipInput = false;
+          this.parentForm.removeControl('tipRate')
+        }
+      })
     this.selectJobs(this.parentForm.value.jobArea);
   }
   selectJobs(jobArea) {

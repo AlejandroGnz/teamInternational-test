@@ -10,9 +10,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field *ngIf="showTipInput">
     <input
-      formControlName="dateOfBirth"
+      formControlName="tipRate"
       type="text"
       matInput
       placeholder="Tip Rate"
