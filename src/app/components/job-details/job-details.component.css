@@ -1,0 +1,14 @@
+.job-form {
+  display: flex;
+  flex-direction: column;
+}
+.radio-button-input {
+  height: 45.5px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.25em;
+}
+
+.radio-button-input mat-radio-button {
+  margin-right: 15px;
+}

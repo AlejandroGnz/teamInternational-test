@@ -10,6 +10,7 @@ import {
   MatIconModule,
   MatTooltipModule,
   MatTableModule,
+  MatRadioModule,
   MatDatepickerModule,
 } from '@angular/material';
 
@@ -25,6 +26,7 @@ import {
     MatIconModule,
     MatTooltipModule,
     MatTableModule,
+    MatRadioModule,
     MatDatepickerModule
   ],
   exports: [
@@ -37,6 +39,7 @@ import {
     MatIconModule,
     MatTooltipModule,
     MatTableModule,
+    MatRadioModule,
     MatDatepickerModule
   ]
 })

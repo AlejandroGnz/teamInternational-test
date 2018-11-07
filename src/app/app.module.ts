@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
 import { EmployeeFormComponent } from './components/employee-info/employee-info.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { EmployeeFormComponent } from './components/employee-info/employee-info.
     EmployeeDetails,
     EmployeesTableComponent,
     SearchEmployeeComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,
